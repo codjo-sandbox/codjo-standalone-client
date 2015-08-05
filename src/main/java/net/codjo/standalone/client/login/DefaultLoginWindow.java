@@ -1,4 +1,9 @@
 package net.codjo.standalone.client.login;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.util.HashMap;
+import java.util.Map;
+import javax.swing.ImageIcon;
 import net.codjo.gui.ApplicationData;
 import net.codjo.gui.SplashScreen;
 import net.codjo.gui.toolkit.swing.SwingWorker;
@@ -9,11 +14,6 @@ import net.codjo.standalone.client.StandaloneGuiCore;
 import net.codjo.standalone.client.action.QuitAction;
 import net.codjo.standalone.client.gui.Environment;
 import net.codjo.utils.JukeBox;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.util.HashMap;
-import java.util.Map;
-import javax.swing.ImageIcon;
 import org.apache.log4j.Logger;
 /**
  *
@@ -99,10 +99,10 @@ public class DefaultLoginWindow extends AbstractLoginWindow {
     private class ServerComboListener implements ItemListener {
         public void itemStateChanged(ItemEvent event) {
             if (Environment.DEV.getLabel().equals(serverCombo.getSelectedItem().toString())) {
-                loginField.setText("user_dev");
+                loginField.setText("s_focs_dev");
             }
             else if (Environment.INT.getLabel().equals(serverCombo.getSelectedItem().toString())) {
-                loginField.setText("user_tr");
+                loginField.setText("s_focs_tr");
             }
             else if (Environment.REC
                   .getLabel()
